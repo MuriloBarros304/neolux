@@ -88,7 +88,6 @@ function M.setup()
         ["@lsp.typemod.function.defaultLibrary"] = { link = "Function" },
         ["@attribute"]           = { fg = palette.blue }, -- The 'dataclass' word
         ["@attribute.builtin"]   = { fg = palette.blue }, -- Built-ins like property or staticmethod
-        ["@punctuation.special"] = { fg = palette.pink },
         ["@tag.builtin"]           = { fg = palette.pink }, -- Standard DOM tags (div, span, a, p)
         ["@tag.attribute.builtin"] = { fg = palette.green }, -- Standard attributes (class, id, href)
         ["@string.special.url"]    = { fg = palette.blue, underline = true }, -- The actual URL string inside href="url"
@@ -96,9 +95,25 @@ function M.setup()
         ["@markup.heading"]        = { fg = palette.orange, bold = true }, -- Text inside <h1>, <h2>, etc.
         ["@markup.strong"]         = { fg = palette.fg, bold = true }, -- Text inside <b> or <strong>
         ["@markup.italic"]         = { fg = palette.fg, italic = true }, -- Text inside <i> or <em>
+        ["@tag.css"]                  = { fg = palette.pink },       -- body, div, span selectors
+        ["@property.css"]             = { fg = palette.light_blue }, -- background-color, margin, display
+        ["@type.css"]                 = { link = "@tag.css" },      -- Fallback for element selectors
+        ["@variable.css"]             = { fg = palette.green },      -- Custom properties / variables (--primary-color)
+        ["@string.css"]               = { link = "String" },
+        ["@number.css"]               = { link = "Number" },        -- 10rem, 0.05em, 100vh
+        ["@keyword.css"]              = { link = "Keyword" },       -- !important, @media, @keyframes
+        ["@constant.css"]             = { fg = palette.purple },    -- CSS keywords (flex, bold, none, hidden)
+        ["@punctuation.delimiter.css"] = { fg = palette.beige },    -- Colons, semicolons
+        ["@punctuation.bracket.tsx"]       = { fg = palette.orange },
+        ["@punctuation.bracket.jsx"]       = { fg = palette.orange },
+        ["@punctuation.special.tsx"]       = { fg = palette.orange },
+        ["@punctuation.special.jsx"]       = { fg = palette.orange },
+        ["@punctuation.special"]           = { fg = palette.orange },
 
         -- 3. RAINBOW DELIMITERS
-        ["@punctuation.bracket"] = { fg = palette.yellow }, -- Fallback for standard brackets
+        ["@punctuation.bracket"]           = { fg = palette.yellow }, -- Fallback for standard brackets
+        ["@punctuation.bracket.delimiter"] = { link = "@punctuation.bracket" },
+        ["@lsp.type.bracket"]              = { link = "@punctuation.bracket" },
         RainbowDelimiterYellow = { fg = palette.pink }, -- I know this is not yellow
         RainbowDelimiterOrange = { fg = palette.orange },
         RainbowDelimiterRed    = { fg = palette.yellow },
