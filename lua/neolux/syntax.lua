@@ -50,10 +50,10 @@ function M.setup()
         Todo           = { fg = palette.bg, bg = palette.yellow, bold = true },
 
         -- 2. MODERN TREE-SITTER GROUPS
-        ["@variable"]           = { fg = palette.fg }, -- Normal variables
+        ["@variable"]           = { fg = palette.orange }, -- Normal variables
         ["@variable.builtin"]   = { fg = palette.green }, -- 'self' or 'this'
         ["@variable.parameter"] = { fg = palette.orange }, -- Function arguments
-        ["@variable.member"] = { fg = palette.light_blue }, -- Attributes
+        ["@variable.member"]    = { fg = palette.light_blue }, -- Attributes
         ["@function"]           = { link = "Function" },
         ["@function.builtin"]   = { fg = palette.light_blue }, -- print(), len()
         ["@keyword"]            = { link = "Keyword" },
@@ -81,10 +81,13 @@ function M.setup()
         ["@operator"]           = { link = "Operator" }, -- +, -, =, ->
         ["@keyword.directive"]  = { fg = palette.pink }, -- #include, #define in C
         ["@keyword.import"]     = { link = "Include" }, -- import, require
-        ["@lsp.type.class"]     = { link = "Type" },
-        ["@lsp.type.property"] = { link = "@variable.member" },
-        ["@lsp.type.namespace"] = { link = "@module" },
-        ["@lsp.typemod.method.defaultLibrary"] = { link = "Function" },
+        ["@lsp.type.class"]                      = { link = "Type" },
+        ["@lsp.type.property"]                   = { link = "@variable.member" },
+        ["@lsp.type.namespace"]                  = { link = "@module" },
+        ["@lsp.type.parameter"]                  = { fg = palette.orange },
+        ["@lsp.mod.declaration.parameter"]       = { fg = palette.orange },
+        ["@lsp.typemod.variable.parameter"]      = { fg = palette.orange },
+        ["@lsp.typemod.method.defaultLibrary"]   = { link = "Function" },
         ["@lsp.typemod.function.defaultLibrary"] = { link = "Function" },
         ["@attribute"]           = { fg = palette.blue }, -- The 'dataclass' word
         ["@attribute.builtin"]   = { fg = palette.blue }, -- Built-ins like property or staticmethod
@@ -104,11 +107,11 @@ function M.setup()
         ["@keyword.css"]              = { link = "Keyword" },       -- !important, @media, @keyframes
         ["@constant.css"]             = { fg = palette.purple },    -- CSS keywords (flex, bold, none, hidden)
         ["@punctuation.delimiter.css"] = { fg = palette.beige },    -- Colons, semicolons
-        ["@punctuation.bracket.tsx"]       = { fg = palette.orange },
-        ["@punctuation.bracket.jsx"]       = { fg = palette.orange },
-        ["@punctuation.special.tsx"]       = { fg = palette.orange },
-        ["@punctuation.special.jsx"]       = { fg = palette.orange },
-        ["@punctuation.special"]           = { fg = palette.orange },
+        ["@punctuation.bracket.tsx"]   = { fg = palette.yellow },
+        ["@punctuation.bracket.jsx"]   = { fg = palette.yellow },
+        ["@punctuation.special.tsx"]   = { fg = palette.orange },
+        ["@punctuation.special.jsx"]   = { fg = palette.orange },
+        ["@punctuation.special"]       = { fg = palette.orange },
 
         -- 3. RAINBOW DELIMITERS
         ["@punctuation.bracket"]           = { fg = palette.yellow }, -- Fallback for standard brackets
@@ -120,17 +123,17 @@ function M.setup()
         RainbowDelimiterCyan   = { fg = palette.light_blue },
         RainbowDelimiterBlue   = { fg = palette.blue },
         RainbowDelimiterViolet = { fg = palette.purple },
-        RainbowDelimiterGreen = {fg = palette.green},
+        RainbowDelimiterGreen  = {fg = palette.green},
 
         -- 4. MARKDOWN STRUCTURE
-        ["@markup.heading.1.markdown"]      = { fg = palette.pink, bold = true },
-        ["@markup.heading.2.markdown"]      = { fg = palette.orange, bold = true },
-        ["@markup.heading.3.markdown"]      = { fg = palette.yellow, bold = true },
-        ["@markup.heading.4.markdown"]      = { fg = palette.green, bold = true },
-        ["@markup.heading.5.markdown"]      = { fg = palette.light_blue, bold = true },
-        ["@markup.heading.6.markdown"]      = { fg = palette.purple, bold = true },
-        ["@markup.link.url.markdown"]       = { fg = palette.blue, underline = true },
-        ["@markup.link.label.markdown"]     = { fg = palette.green },
+        ["@markup.heading.1.markdown"]  = { fg = palette.pink, bold = true },
+        ["@markup.heading.2.markdown"]  = { fg = palette.orange, bold = true },
+        ["@markup.heading.3.markdown"]  = { fg = palette.yellow, bold = true },
+        ["@markup.heading.4.markdown"]  = { fg = palette.green, bold = true },
+        ["@markup.heading.5.markdown"]  = { fg = palette.light_blue, bold = true },
+        ["@markup.heading.6.markdown"]  = { fg = palette.purple, bold = true },
+        ["@markup.link.url.markdown"]   = { fg = palette.blue, underline = true },
+        ["@markup.link.label.markdown"] = { fg = palette.green },
 
         -- 5. GIT SIGNS
         GitSignsAdd    = { fg = palette.green, bg = "NONE" }, -- New lines
