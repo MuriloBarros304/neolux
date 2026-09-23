@@ -50,7 +50,7 @@ function M.setup()
         Todo           = { fg = palette.bg, bg = palette.yellow, bold = true },
 
         -- 2. MODERN TREE-SITTER GROUPS
-        ["@variable"]           = { fg = palette.orange }, -- Normal variables
+        ["@variable"]           = { fg = palette.fg }, -- Normal variables
         ["@variable.builtin"]   = { fg = palette.green }, -- 'self' or 'this'
         ["@variable.parameter"] = { fg = palette.orange }, -- Function arguments
         ["@variable.member"]    = { fg = palette.light_blue }, -- Attributes
