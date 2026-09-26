@@ -4,7 +4,7 @@ local M = {}
 
 function M.setup()
     local groups = {
-        -- 1. TRADITIONAL SYNTAX GROUPS
+        -- 1. SYNTAX GROUPS
         -- These act as a fallback and foundation.
         Comment        = { fg = palette.beige, italic = true },
         -- Constants
@@ -49,7 +49,7 @@ function M.setup()
         Error          = { fg = palette.bg, bg = palette.pink, bold = true },
         Todo           = { fg = palette.bg, bg = palette.yellow, bold = true },
 
-        -- 2. MODERN TREE-SITTER GROUPS
+        -- 2. TREE-SITTER GROUPS
         ["@variable"]           = { fg = palette.fg }, -- Normal variables
         ["@variable.builtin"]   = { fg = palette.green }, -- 'self' or 'this'
         ["@variable.parameter"] = { fg = palette.orange }, -- Function arguments
@@ -84,9 +84,7 @@ function M.setup()
         ["@lsp.type.class"]                      = { link = "Type" },
         ["@lsp.type.property"]                   = { link = "@variable.member" },
         ["@lsp.type.namespace"]                  = { link = "@module" },
-        ["@lsp.type.parameter"]                  = { fg = palette.orange },
         ["@lsp.mod.declaration.parameter"]       = { fg = palette.orange },
-        ["@lsp.typemod.variable.parameter"]      = { fg = palette.orange },
         ["@lsp.typemod.method.defaultLibrary"]   = { link = "Function" },
         ["@lsp.typemod.function.defaultLibrary"] = { link = "Function" },
         ["@attribute"]           = { fg = palette.blue }, -- The 'dataclass' word
@@ -107,11 +105,28 @@ function M.setup()
         ["@keyword.css"]              = { link = "Keyword" },       -- !important, @media, @keyframes
         ["@constant.css"]             = { fg = palette.purple },    -- CSS keywords (flex, bold, none, hidden)
         ["@punctuation.delimiter.css"] = { fg = palette.beige },    -- Colons, semicolons
-        ["@punctuation.bracket.tsx"]   = { fg = palette.yellow },
-        ["@punctuation.bracket.jsx"]   = { fg = palette.yellow },
         ["@punctuation.special.tsx"]   = { fg = palette.orange },
         ["@punctuation.special.jsx"]   = { fg = palette.orange },
-        ["@punctuation.special"]       = { fg = palette.orange },
+        ["@punctuation.special"]       = { fg = palette.yellow },
+        ["@punctuation.special.python"] = { fg = palette.yellow },
+        ["@punctuation.special.vue"]       = { fg = palette.orange },
+        ["@punctuation.special.svelte"]    = { fg = palette.orange },
+        ["@punctuation.bracket.tsx"]       = { fg = palette.orange },
+        ["@punctuation.bracket.jsx"]       = { fg = palette.orange },
+        ["@function.call"]      = { link = "Function" },
+        ["@method.call"]        = { link = "Function" },
+        ["@keyword.operator"]   = { link = "Operator" }, -- e.g. 'and', 'or', 'in', 'sizeof'
+        ["@keyword.coroutine"]  = { fg = palette.pink, bold = true }, -- async, await, yield
+        ["@keyword.storage"]    = { link = "StorageClass" }, -- static, const, mut, extern
+        ["@keyword.type"]       = { link = "Type" },
+        ["@string.documentation"] = { fg = palette.beige, italic = true }, -- Python docstrings / JSDoc
+        ["@label"]              = { fg = palette.pink }, -- C/C++ goto labels, loop tags
+        ["@lsp.type.parameter"]                  = { fg = palette.orange },
+        ["@lsp.typemod.variable.parameter"]      = { fg = palette.orange },
+        ["@lsp.typemod.variable.parameterScope"] = { fg = palette.orange },
+        ["@lsp.typemod.parameter.declaration"]   = { fg = palette.orange },
+        ["@lsp.typemod.parameter.definition"]    = { fg = palette.orange },
+        ["@lsp.typemod.parameter.readonly"]      = { fg = palette.orange },
 
         -- 3. RAINBOW DELIMITERS
         ["@punctuation.bracket"]           = { fg = palette.yellow }, -- Fallback for standard brackets
@@ -134,11 +149,20 @@ function M.setup()
         ["@markup.heading.6.markdown"]  = { fg = palette.purple, bold = true },
         ["@markup.link.url.markdown"]   = { fg = palette.blue, underline = true },
         ["@markup.link.label.markdown"] = { fg = palette.green },
+        ["@markup.raw"]            = { fg = palette.orange },      -- Inline code blocks `code`
+        ["@markup.raw.block"]      = { fg = palette.fg },          -- Fenced code blocks ```
+        ["@markup.list"]           = { fg = palette.pink },        -- Markdown bullets (- / *)
+        ["@markup.list.checked"]   = { fg = palette.green },    -- [x] Checkboxes
+        ["@markup.list.unchecked"] = { fg = palette.gray3 },    -- [ ] Checkboxes
 
         -- 5. GIT SIGNS
         GitSignsAdd    = { fg = palette.green, bg = "NONE" }, -- New lines
         GitSignsChange = { fg = palette.yellow, bg = "NONE" }, -- Changed lines
         GitSignsDelete = { fg = palette.pink, bg = "NONE" },   -- Deleted lines
+        DiffAdd    = { fg = palette.green, bg = palette.gray1 },
+        DiffChange = { fg = palette.yellow, bg = palette.gray1 },
+        DiffDelete = { fg = palette.pink, bg = palette.gray1 },
+        DiffText   = { fg = palette.fg, bg = palette.gray2, bold = true },
 
         -- 6. LSP DIAGNOSTICS
         DiagnosticError = { fg = palette.pink },

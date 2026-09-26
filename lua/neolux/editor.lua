@@ -57,11 +57,7 @@ function M.setup()
         TabLineSel   = { fg = palette.gray2, bg = palette.orange, bold = true },
         TabLine      = { fg = palette.fg, bg = palette.gray1 },
         TabLineFill  = { bg = palette.gray2 },
-        NeoTreeNormal   = { fg = palette.gray3, bg = palette.bg },
-        NeoTreeNormalNC = { fg = palette.gray3, bg = palette.bg },
-        NeoTreeFileName = { fg = palette.yellow },
         NeoTreeDirIcon  = { fg = palette.gray3 },
-        NeoTreeIndentMarker = { fg = palette.gray1 },
 
         -- 9. LSP Diagnostics
         -- DiagnosticError       = { fg = palette.pink, undercurl = true },
@@ -83,6 +79,44 @@ function M.setup()
         NormalFloat  = { fg = palette.fg, bg = palette.gray1 },
         FloatBorder  = { fg = palette.gray3, bg = palette.gray1 },
         FloatTitle   = { fg = palette.orange, bg = palette.gray1, bold = true },
+
+        -- 12. NeoTree UI
+        -- Base & Windowing
+        NeoTreeNormal             = { fg = palette.gray3, bg = palette.bg },
+        NeoTreeNormalNC           = { fg = palette.gray3, bg = palette.bg },
+        NeoTreeSignColumn         = { fg = palette.gray3, bg = palette.bg },
+        NeoTreeWinSeparator       = { fg = palette.gray1, bg = palette.bg },
+        NeoTreeEndOfBuffer        = { fg = palette.bg, bg = palette.bg },
+        NeoTreeCursorLine         = { bg = palette.gray1 },
+        -- Structural Elements
+        NeoTreeRootName           = { fg = palette.pink, bold = true },
+        NeoTreeDirectoryName      = { fg = palette.fg },
+        NeoTreeDirectoryIcon      = { fg = palette.light_blue },
+        NeoTreeExpander           = { fg = palette.gray2 },
+        NeoTreeIndentMarker       = { fg = palette.gray1 },
+        NeoTreeSymbolicLinkTarget = { fg = palette.purple },
+        -- File Names & States
+        NeoTreeFileName           = { fg = palette.fg },
+        NeoTreeFileNameOpened     = { fg = palette.fg, bold = true },
+        NeoTreeDimText            = { fg = palette.gray2 },
+        NeoTreeDotfile            = { fg = palette.gray2 },
+        NeoTreeHiddenByName       = { fg = palette.gray2 },
+        -- Git Status within File Explorer
+        NeoTreeGitAdded           = { fg = palette.green },
+        NeoTreeGitModified        = { fg = palette.yellow },
+        NeoTreeGitDeleted         = { fg = palette.pink },
+        NeoTreeGitRenamed         = { fg = palette.purple },
+        NeoTreeGitUntracked       = { fg = palette.orange },
+        NeoTreeGitIgnored         = { fg = palette.gray2 },
+        NeoTreeGitConflict        = { fg = palette.pink, bold = true },
+        NeoTreeGitUnstaged        = { fg = palette.yellow },
+        NeoTreeGitStaged          = { fg = palette.green },
+        -- In-Tree Diagnostics & Badges
+        NeoTreeFileStats          = { fg = palette.gray2 },
+        NeoTreeFileStatsHeader    = { fg = palette.gray3, bold = true },
+        NeoTreeFilterTerm         = { fg = palette.green, bold = true },
+        NeoTreeFloatTitle         = { fg = palette.light_blue, bg = palette.gray1, bold = true },
+        NeoTreeFloatBorder        = { fg = palette.gray3, bg = palette.gray1 },
 
         -- Lazy.nvim Specifics (Lazy sometimes overrides standard floats)
         LazyNormal   = { fg = palette.fg, bg = palette.gray1 },
